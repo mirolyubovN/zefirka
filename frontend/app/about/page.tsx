@@ -39,7 +39,7 @@ export default function AboutPage() {
 						subtitle="Познакомьтесь с человеком за вашими любимыми десертами"
 					/>
 
-					<div className="grid items-start gap-12 lg:grid-cols-2 mb-20">
+					<div className="grid items-center gap-12 lg:grid-cols-3 mb-20">
 						<AnimatedFadeIn direction="left">
 							<div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-xl">
 								<Image
@@ -53,6 +53,7 @@ export default function AboutPage() {
 							</div>
 						</AnimatedFadeIn>
 
+						<div className='lg:col-span-2'>
 						<AnimatedFadeIn direction="right">
 							<div>
 								<h2 className="text-2xl font-bold text-foreground mb-6">
@@ -64,6 +65,7 @@ export default function AboutPage() {
 								/>
 							</div>
 						</AnimatedFadeIn>
+						</div>
 					</div>
 
 					<AnimatedFadeIn>
