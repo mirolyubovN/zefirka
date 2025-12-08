@@ -16,7 +16,7 @@ export function Footer() {
           <div className="lg:col-span-5">
             <Link
               href="/"
-              className="inline-block text-3xl font-display font-medium tracking-tight text-foreground transition-colors hover:text-primary"
+              style={{ fontFamily: "var(--font-logo)" }} className="inline-block text-4xl text-foreground transition-colors hover:text-primary"
             >
               {SITE_NAME}
             </Link>

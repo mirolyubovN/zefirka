@@ -5,13 +5,7 @@ import { SectionTitle } from '@/components/section-title';
 import { AnimatedFadeIn } from '@/components/animated-fade-in';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { BreadcrumbSchema } from '@/components/structured-data';
-import {
-	Carousel,
-	CarouselContent,
-	CarouselItem,
-	CarouselNext,
-	CarouselPrevious,
-} from '@/components/ui/carousel';
+import { CertificatesGallery } from '@/components/certificates-gallery';
 
 export const metadata: Metadata = {
 	title: 'Обо мне — Профитроли',
@@ -90,25 +84,7 @@ export default function AboutPage() {
 								<h2 className="text-2xl font-bold text-foreground mb-8 text-center">
 									Сертификаты
 								</h2>
-								<Carousel className="w-full max-w-4xl mx-auto">
-									<CarouselContent>
-										{about.certificates.map((cert, i) => (
-											<CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3">
-												<div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-md">
-													<Image
-														src={cert}
-														alt={'Сертификат ' + (i + 1)}
-														fill
-														className="object-cover"
-														sizes="(max-width: 768px) 100vw, 33vw"
-													/>
-												</div>
-											</CarouselItem>
-										))}
-									</CarouselContent>
-									<CarouselPrevious />
-									<CarouselNext />
-								</Carousel>
+								<CertificatesGallery certificates={about.certificates} />
 							</div>
 						</AnimatedFadeIn>
 					)}

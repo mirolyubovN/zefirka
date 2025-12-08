@@ -45,7 +45,7 @@ export default function ContactsPage() {
 					{ name: 'Контакты', url: '/contacts' },
 				]}
 			/>
-			<div className="py-24 lg:py-32">
+			<div className="py-16">
 				<div className="container mx-auto px-4">
 					<Breadcrumbs
 						items={[

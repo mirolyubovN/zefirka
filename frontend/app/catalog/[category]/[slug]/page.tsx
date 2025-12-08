@@ -1,11 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronLeft } from 'lucide-react';
 import { getDessertBySlug, getCategoryBySlug, getDesserts } from '@/content';
 import { CTAButton } from '@/components/cta-button';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { AnimatedFadeIn } from '@/components/animated-fade-in';
@@ -90,15 +87,6 @@ export default async function DessertPage({ params }: DessertPageProps) {
 							{ label: dessert.title },
 						]}
 					/>
-
-					<AnimatedFadeIn>
-						<Button asChild variant="ghost" className="mb-8">
-							<Link href={'/catalog/' + category}>
-								<ChevronLeft className="mr-2 h-4 w-4" />
-								Назад к {categoryData.title}
-							</Link>
-						</Button>
-					</AnimatedFadeIn>
 
 					<div className="grid gap-12 lg:grid-cols-2">
 						<AnimatedFadeIn direction="left">

@@ -40,7 +40,7 @@ export default function CatalogPage() {
 						title="Каталог десертов"
 						subtitle="Выберите категорию, чтобы увидеть все доступные десерты"
 					/>
-					<AnimatedStagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+					<AnimatedStagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 p-4 -m-4">
 						{categories.map((category) => (
 							<AnimatedStaggerItem key={category.id}>
 								<CategoryCard category={category} />

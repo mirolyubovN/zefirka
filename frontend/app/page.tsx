@@ -102,7 +102,7 @@ function CategoriesSection() {
 					title="Категории десертов"
 					subtitle="Выберите то, что по душе именно вам"
 				/>
-				<AnimatedStagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				<AnimatedStagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 p-4 -m-4">
 					{categories.map((category) => (
 						<AnimatedStaggerItem key={category.id}>
 							<CategoryCard category={category} />
@@ -126,7 +126,7 @@ function WhyChooseUsSection() {
 					title="Почему выбирают меня"
 					subtitle="Каждый десерт создаётся с любовью и заботой о вашем здоровье"
 				/>
-				<AnimatedStagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				<AnimatedStagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 p-4 -m-4">
 					{WHY_CHOOSE_US.map((item, index) => {
 						const Icon = iconMap[item.icon as keyof typeof iconMap];
 						return (
@@ -261,7 +261,7 @@ function ReviewsSection() {
 					title="Отзывы клиентов"
 					subtitle="Что говорят те, кто уже попробовал мои десерты"
 				/>
-				<AnimatedStagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+				<AnimatedStagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 p-4 -m-4">
 					{reviews.map((review) => (
 						<AnimatedStaggerItem key={review.id}>
 							<ReviewCard review={review} />

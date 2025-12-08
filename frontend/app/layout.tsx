@@ -1,5 +1,5 @@
-import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+﻿import type { Metadata, Viewport } from "next";
+import { Cormorant_Garamond, Inter, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -19,6 +19,14 @@ const inter = Inter({
 	variable: "--font-inter",
 	subsets: ["latin", "cyrillic"],
 	weight: ["400", "500", "600", "700"],
+	display: "swap",
+	preload: true,
+});
+
+const greatVibes = Great_Vibes({
+	variable: "--font-logo",
+	subsets: ["latin"],
+	weight: ["400"],
 	display: "swap",
 	preload: true,
 });
@@ -62,7 +70,7 @@ export const metadata: Metadata = {
 				url: '/images/og-image.jpg',
 				width: 1200,
 				height: 630,
-				alt: 'Профитроли — Премиальные натуральные десерты',
+				alt: 'Profiterole — Премиальные натуральные десерты',
 			},
 		],
 	},
@@ -94,13 +102,13 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="ru" suppressHydrationWarning>
+		<html lang="ru">
 			<head>
 				<PersonSchema />
 				<LocalBusinessSchema />
 				<WebsiteSchema />
 			</head>
-			<body className={`${cormorant.variable} ${inter.variable} font-sans antialiased`}>
+			<body className={`${cormorant.variable} ${inter.variable} ${greatVibes.variable} font-sans antialiased`}>
 				<ThemeProvider defaultTheme="light" storageKey="profiterole-theme">
 					<Header />
 					<main className="min-h-screen">{children}</main>

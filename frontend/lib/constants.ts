@@ -1,7 +1,7 @@
 // Contact links - keep in sync with content.md
 export const CONTACT_LINKS = {
 	whatsapp: 'https://wa.me/77772714910',
-	telegram: 'https://t.me/Profiterole_kz',
+	telegram: 'https://t.me/profiterolka_kst',
 	instagram: 'https://instagram.com/oksana_desserts_kst',
 };
 
@@ -17,7 +17,7 @@ export const NAV_ITEMS = [
 ];
 
 // Site metadata
-export const SITE_NAME = 'Профитроли';
+export const SITE_NAME = 'Profiterole';
 export const SITE_DESCRIPTION = 'Премиальные натуральные десерты ручной работы: зефир, торты, птичье молоко и подарочные наборы';
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://profiterole.kz';
 
