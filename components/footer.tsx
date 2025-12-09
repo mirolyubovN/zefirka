@@ -122,9 +122,18 @@ export function Footer() {
 					<p className="text-xs tracking-wide text-muted-foreground">
 						&copy; {currentYear} {SITE_NAME}. Все права защищены.
 					</p>
-					<p className="text-xs tracking-wide text-muted-foreground/60">
-						г. Костанай
-					</p>
+					<div className="flex items-center gap-4 text-xs tracking-wide text-muted-foreground/60">
+						<span>г. Костанай</span>
+						<span className="text-muted-foreground/30">•</span>
+						<a
+							href="https://mirolyubovn.netlify.app/ru"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-primary/70 transition-colors hover:text-primary"
+						>
+							Разработка веб-сайтов — НМ
+						</a>
+					</div>
 				</div>
 			</div>
 		</footer>
