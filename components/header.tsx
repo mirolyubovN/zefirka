@@ -30,10 +30,13 @@ export function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="group flex items-center gap-2 transition-colors"
+          className="group flex items-center flex-col transition-colors"
         >
           <span style={{ fontFamily: "var(--font-logo)" }} className="text-2xl text-foreground transition-colors group-hover:text-primary lg:text-3xl">
             {SITE_NAME}
+          </span>
+          <span style={{ fontFamily: "var(--font-logo)" }} className="text-base text-foreground transition-colors group-hover:text-primary lg:text-xl">
+            Костанай
           </span>
         </Link>
 
