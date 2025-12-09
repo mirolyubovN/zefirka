@@ -18,7 +18,10 @@ export function Footer() {
 							href="/"
 							style={{ fontFamily: "var(--font-logo)" }} className="inline-block text-4xl text-foreground transition-colors hover:text-primary"
 						>
-							{SITE_NAME}
+							<div className='flex flex-col items-center'>
+								<span>{SITE_NAME}</span>
+								<span className='text-base lg:text-xl'>Костанай</span>
+							</div>
 						</Link>
 						<p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
 							Премиальные натуральные десерты ручной работы.
