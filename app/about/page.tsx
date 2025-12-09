@@ -26,7 +26,7 @@ export default function AboutPage() {
 					{ name: 'Обо мне', url: '/about' },
 				]}
 			/>
-			<div className="py-16">
+			<div className="py-8 lg:py-16">
 				<div className="container mx-auto px-4">
 					<Breadcrumbs
 						items={[
@@ -54,17 +54,17 @@ export default function AboutPage() {
 						</AnimatedFadeIn>
 
 						<div className='lg:col-span-2'>
-						<AnimatedFadeIn direction="right">
-							<div>
-								<h2 className="text-2xl font-bold text-foreground mb-6">
-									Моя история
-								</h2>
-								<div
-									className="prose prose-neutral max-w-none text-muted-foreground prose-p:leading-relaxed [&>p]:mb-4"
-									dangerouslySetInnerHTML={{ __html: about.story }}
-								/>
-							</div>
-						</AnimatedFadeIn>
+							<AnimatedFadeIn direction="right">
+								<div>
+									<h2 className="text-2xl font-bold text-foreground mb-6">
+										Моя история
+									</h2>
+									<div
+										className="prose prose-neutral max-w-none text-muted-foreground prose-p:leading-relaxed [&>p]:mb-4"
+										dangerouslySetInnerHTML={{ __html: about.story }}
+									/>
+								</div>
+							</AnimatedFadeIn>
 						</div>
 					</div>
 

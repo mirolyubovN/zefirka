@@ -12,7 +12,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link href={`/catalog/${category.slug}`}>
       <div className="hover-lift">
-        <Card className="group relative overflow-hidden border-0 bg-card shadow-sm transition-shadow duration-500 hover:shadow-xl hover:shadow-primary/10">
+        <Card className="group relative overflow-hidden border-0 bg-card py-0 shadow-sm transition-shadow duration-500 hover:shadow-xl hover:shadow-primary/10">
           <CardContent className="relative aspect-[4/3] p-0">
             <Image
               src={category.coverImage}
@@ -21,7 +21,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300" />
             <div className="absolute inset-0 flex flex-col justify-end p-6">
               <div className="translate-y-2 transition-transform duration-300 group-hover:translate-y-0">
                 <h3 className="font-display text-xl font-medium text-white md:text-2xl">

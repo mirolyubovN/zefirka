@@ -36,7 +36,7 @@ export default function ReviewsPage() {
 					reviews={reviews}
 				/>
 			)}
-			<div className="py-16">
+			<div className="py-8 lg:py-16">
 				<div className="container mx-auto px-4">
 					<Breadcrumbs
 						items={[

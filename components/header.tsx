@@ -7,6 +7,7 @@ import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -62,7 +63,7 @@ export function Header() {
 
         {/* Right side actions */}
         <div className="flex items-center gap-2">
-          <ThemeToggle className="hidden sm:flex" />
+          <ThemeToggle />
 
           {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -78,6 +79,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent
               side="right"
+              showCloseButton={false}
               className="w-full max-w-sm border-l border-border/40 bg-background/95 backdrop-blur-xl"
             >
               <SheetHeader className="border-b border-border/40 pb-6">
@@ -85,7 +87,16 @@ export function Header() {
                   <SheetTitle style={{ fontFamily: "var(--font-logo)" }} className="text-3xl text-foreground">
                     {SITE_NAME}
                   </SheetTitle>
-                  <ThemeToggle />
+                  <SheetClose asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-9 w-9 rounded-full border border-border/60 hover:border-primary hover:text-primary"
+                    >
+                      <X className="h-4 w-4" />
+                      <span className="sr-only">Закрыть меню</span>
+                    </Button>
+                  </SheetClose>
                 </div>
               </SheetHeader>
 

@@ -78,7 +78,7 @@ export default async function DessertPage({ params }: DessertPageProps) {
 				image={mainImage}
 				category={categoryData.title}
 			/>
-			<div className="py-16">
+			<div className="py-8 lg:py-16">
 				<div className="container mx-auto px-4">
 					<Breadcrumbs
 						items={[
