@@ -8,7 +8,7 @@ export function PersonSchema() {
     '@type': 'Person',
     name: 'Оксана',
     jobTitle: 'Домашний кондитер',
-    description: 'Премиальные натуральные десерты ручной работы: зефир, торты, птичье молоко',
+    description: 'Премиальные натуральные десерты ручной работы: зефир, торты, птичье молоко, профитролли, трюфели',
     url: SITE_URL,
     image: `${SITE_URL}/images/about-photo.jpg`,
     address: {
@@ -90,7 +90,7 @@ export function WebsiteSchema() {
     '@id': `${SITE_URL}/#website`,
     name: SITE_NAME,
     url: SITE_URL,
-    description: 'Премиальные натуральные десерты ручной работы',
+    description: 'Премиальные натуральные десерты ручной работы в Костанае',
     publisher: { '@id': `${SITE_URL}/#business` },
     inLanguage: 'ru-RU',
   };

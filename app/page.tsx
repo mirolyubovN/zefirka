@@ -60,7 +60,7 @@ function HeroSection() {
 					<h1 className="max-w-4xl font-display text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
 						Натуральные десерты{' '}
 						<span className="relative">
-							<span className="text-primary">ручной работы</span>
+							<span className="text-primary">ручной работы</span> в Костанае
 							<span className="absolute -bottom-2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 						</span>
 					</h1>

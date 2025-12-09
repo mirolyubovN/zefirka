@@ -18,7 +18,7 @@ export const NAV_ITEMS = [
 
 // Site metadata
 export const SITE_NAME = 'Profiterole';
-export const SITE_DESCRIPTION = 'Премиальные натуральные десерты ручной работы: зефир, торты, птичье молоко и подарочные наборы';
+export const SITE_DESCRIPTION = 'Премиальные натуральные десерты ручной работы: зефир, торты, птичье молоко, трюфели, профитроли и подарочные наборы в Костанае';
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://profiterole.kz';
 
 // Why choose us items

@@ -37,7 +37,7 @@ export async function generateMetadata({
 	const plainDescription = dessert.description?.replace(/<[^>]*>/g, '') || '';
 
 	return {
-		title: dessert.title + ' — Натуральные десерты ручной работы',
+		title: dessert.title + ' — Натуральные десерты ручной работы | Костанай',
 		description: plainDescription.slice(0, 160) || dessert.title + ' от домашнего кондитера.',
 		alternates: {
 			canonical: '/catalog/' + category + '/' + slug,
