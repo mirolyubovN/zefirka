@@ -192,14 +192,14 @@ function AboutPreviewSection() {
 	return (
 		<section className="relative overflow-hidden bg-secondary/30 py-24 dark:bg-card/30 lg:py-32">
 			<div className="container mx-auto px-4">
-				<div className="grid items-center gap-16 lg:grid-cols-2">
+				<div className="grid items-center gap-16 lg:grid-cols-3">
 					<AnimatedFadeIn direction="left">
 						<div className="relative">
 							{/* Decorative frame */}
 							<div className="absolute -inset-4 rounded-2xl border border-primary/10" />
 							<div className="absolute -inset-8 rounded-3xl border border-primary/5" />
 
-							<div className="relative aspect-[4/5] overflow-hidden rounded-xl">
+							<div className="relative aspect-square max-w-2/3 lg:max-w-full lg:aspect-[4/5] overflow-hidden rounded-xl">
 								<Image
 									src={about.photo}
 									alt="Обо мне"
@@ -212,7 +212,7 @@ function AboutPreviewSection() {
 							</div>
 						</div>
 					</AnimatedFadeIn>
-
+					<div className='lg:col-span-2'>
 					<AnimatedFadeIn direction="right">
 						<div>
 							{/* Section tag */}
@@ -244,6 +244,7 @@ function AboutPreviewSection() {
 							</Button>
 						</div>
 					</AnimatedFadeIn>
+					</div>
 				</div>
 			</div>
 		</section>
