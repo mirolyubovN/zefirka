@@ -1,16 +1,12 @@
 import type { Metadata } from 'next';
 import { getReviews } from '@/content';
 import { SectionTitle } from '@/components/section-title';
-import { ReviewCard } from '@/components/review-card';
 import { Breadcrumbs } from '@/components/breadcrumbs';
-import { BreadcrumbSchema, AggregateReviewSchema } from '@/components/structured-data';
-import {
-	AnimatedFadeIn,
-	AnimatedStagger,
-	AnimatedStaggerItem,
-} from '@/components/animated-fade-in';
+import { BreadcrumbSchema } from '@/components/structured-data';
+import { AnimatedFadeIn } from '@/components/animated-fade-in';
 import { CTAButton } from '@/components/cta-button';
 import { Card, CardContent } from '@/components/ui/card';
+import { ReviewsGrid } from '@/components/reviews-grid';
 
 export const metadata: Metadata = {
 	title: 'Отзывы клиентов — Profiterole',
@@ -31,11 +27,6 @@ export default function ReviewsPage() {
 					{ name: 'Отзывы', url: '/reviews' },
 				]}
 			/>
-			{reviews.length > 0 && (
-				<AggregateReviewSchema
-					reviews={reviews}
-				/>
-			)}
 			<div className="py-8 lg:py-16">
 				<div className="container mx-auto px-4">
 					<Breadcrumbs
@@ -55,13 +46,7 @@ export default function ReviewsPage() {
 							</p>
 						</div>
 					) : (
-						<AnimatedStagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 p-4 -m-4">
-							{reviews.map((review) => (
-								<AnimatedStaggerItem key={review.id}>
-									<ReviewCard review={review} />
-								</AnimatedStaggerItem>
-							))}
-						</AnimatedStagger>
+						<ReviewsGrid reviews={reviews} />
 					)}
 
 					<AnimatedFadeIn delay={0.2}>

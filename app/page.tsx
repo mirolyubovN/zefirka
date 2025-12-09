@@ -11,7 +11,7 @@ import {
 import { SectionTitle } from '@/components/section-title';
 import { CTAButtonGroup } from '@/components/cta-button';
 import { CategoryCard } from '@/components/category-card';
-import { ReviewCard } from '@/components/review-card';
+import { ReviewCarousel } from '@/components/review-carousel';
 import { PortfolioGrid } from '@/components/portfolio-grid';
 import { WHY_CHOOSE_US } from '@/lib/constants';
 import {
@@ -49,7 +49,7 @@ function HeroSection() {
 					<div className="mb-8 flex items-center gap-3">
 						<span className="h-px w-12 bg-gradient-to-r from-transparent to-primary/60" />
 						<span className="text-[11px] font-medium uppercase tracking-[0.4em] text-primary">
-							Премиальные десерты
+							Десерты с premium начинками
 						</span>
 						<span className="h-px w-12 bg-gradient-to-l from-transparent to-primary/60" />
 					</div>
@@ -69,7 +69,7 @@ function HeroSection() {
 				{/* Subtitle */}
 				<AnimatedFadeIn delay={0.2}>
 					<p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-						Изысканный зефир, авторские торты и нежнейшее птичье молоко
+						Изысканный зефир, муссовые торты, трюфели, профитроли и нежнейшее птичье молоко
 						из лучших натуральных ингредиентов
 					</p>
 				</AnimatedFadeIn>
@@ -252,7 +252,7 @@ function AboutPreviewSection() {
 
 // Reviews Section
 function ReviewsSection() {
-	const reviews = getReviews(3);
+	const reviews = getReviews();
 
 	return (
 		<section className="py-24 lg:py-32">
@@ -261,27 +261,8 @@ function ReviewsSection() {
 					title="Отзывы клиентов"
 					subtitle="Что говорят те, кто уже попробовал мои десерты"
 				/>
-				<AnimatedStagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 p-4 -m-4">
-					{reviews.map((review) => (
-						<AnimatedStaggerItem key={review.id}>
-							<ReviewCard review={review} />
-						</AnimatedStaggerItem>
-					))}
-				</AnimatedStagger>
-				<AnimatedFadeIn delay={0.2}>
-					<div className="mt-12 text-center">
-						<Button
-							asChild
-							variant="outline"
-							size="lg"
-							className="group gap-2 rounded-full border-2 border-foreground/15 px-8 hover:border-primary hover:text-primary dark:border-foreground/20"
-						>
-							<Link href="/reviews">
-								<span>Все отзывы</span>
-								<ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-							</Link>
-						</Button>
-					</div>
+				<AnimatedFadeIn>
+					<ReviewCarousel reviews={reviews} />
 				</AnimatedFadeIn>
 			</div>
 		</section>

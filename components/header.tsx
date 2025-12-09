@@ -129,7 +129,7 @@ export function Header() {
               {/* Mobile social hint */}
               <div className="absolute bottom-8 left-6 right-6">
                 <p className="text-center text-xs tracking-wide text-muted-foreground">
-                  Премиальные десерты ручной работы
+                  Десерты с premium начинками ручной работы
                 </p>
               </div>
             </SheetContent>

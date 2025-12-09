@@ -36,7 +36,6 @@ export default function AboutPage() {
 
 					<SectionTitle
 						title="Обо мне"
-						subtitle="Познакомьтесь с человеком за вашими любимыми десертами"
 					/>
 
 					<div className="grid items-center gap-12 lg:grid-cols-3 mb-20">
