@@ -8,8 +8,8 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { CertificatesGallery } from '@/components/certificates-gallery';
 
 export const metadata: Metadata = {
-	title: 'Обо мне — Профитроли',
-	description: 'История домашнего кондитера в Костанае. Философия натуральных десертов и сертификаты качества.',
+	title: 'Кондитер Оксана — История натуральных десертов',
+	description: 'Кондитер с обучением в школе Екатерины Абрамовой и «Кейко». Философия натуральных ингредиентов, сертификаты качества. Костанай.',
 	alternates: {
 		canonical: '/about',
 	},

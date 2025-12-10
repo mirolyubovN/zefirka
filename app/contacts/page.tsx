@@ -8,8 +8,8 @@ import { BreadcrumbSchema } from '@/components/structured-data';
 import { CONTACT_LINKS } from '@/lib/constants';
 
 export const metadata: Metadata = {
-	title: 'Контакты — Профитроли',
-	description: 'Свяжитесь со мной через WhatsApp, Telegram или Instagram. Домашние десерты в Костанае.',
+	title: 'Контакты — Заказать десерты в Костанае',
+	description: 'Заказать десерты в Костанае: WhatsApp, Telegram, Instagram. Самовывоз бесплатно, Яндекс Доставка по тарифам сервиса.',
 	alternates: {
 		canonical: '/contacts',
 	},

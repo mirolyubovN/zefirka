@@ -34,7 +34,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
 	title: {
-		default: `${SITE_NAME} — Премиальные натуральные десерты ручной работы в Костанае`,
+		default: `${SITE_NAME} — Натуральные десерты ручной работы | Костанай`,
 		template: `%s | ${SITE_NAME}`,
 	},
 	description: SITE_DESCRIPTION,
@@ -51,29 +51,39 @@ export const metadata: Metadata = {
 			{ rel: 'manifest', url: '/site.webmanifest' },
 		],
 	},
+	authors: [{ name: 'Оксана', url: SITE_URL }],
+	creator: 'Оксана',
+	publisher: SITE_NAME,
 	keywords: [
-		'зефир ручной работы Костанай',
-		'натуральный зефир',
-		'птичье молоко домашнее',
-		'торты на заказ Костанай',
-		'домашний кондитер',
-		'домашний кондитер Костанай',
-		'торты Костанай',
+		// Primary keywords
 		'десерты Костанай',
-		'подарки Костанай',
-		'цветы Костанай',
-		'подарок на 8 марта',
-		'подарок на новый год',
-		'трюфели Костанай',
-		'профитроли Костанай',
-		'печенье Костанай',
+		'торты на заказ Костанай',
+		'домашний кондитер Костанай',
+		'зефир ручной работы',
+		// Long-tail keywords
+		'натуральный зефир без красителей',
+		'птичье молоко домашнее Костанай',
+		'муссовые торты на заказ',
+		'бельгийские трюфели ручной работы',
+		'профитроли с кремом Костанай',
+		// Occasion-based keywords
+		'торт на день рождения Костанай',
+		'десерты на праздник',
+		'подарочные наборы сладостей',
+		// Local variations
+		'кондитер Костанай',
+		'сладости на заказ Костанай',
 	],
 	metadataBase: new URL(SITE_URL),
 	alternates: {
 		canonical: '/',
+		languages: {
+			'ru-RU': '/',
+			'ru-KZ': '/',
+		},
 	},
 	openGraph: {
-		title: `${SITE_NAME} — Премиальные десерты ручной работы | Костанай`,
+		title: `${SITE_NAME} — Натуральные десерты ручной работы`,
 		description: SITE_DESCRIPTION,
 		url: SITE_URL,
 		siteName: SITE_NAME,
@@ -81,32 +91,41 @@ export const metadata: Metadata = {
 		type: "website",
 		images: [
 			{
-				url: '/images/og-image.webp',
+				url: `${SITE_URL}/images/og-image.webp`,
 				width: 1200,
 				height: 630,
 				alt: 'Zefirka — Премиальные натуральные десерты в Костанае',
+				type: 'image/webp',
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: SITE_NAME,
+		title: `${SITE_NAME} — Десерты ручной работы`,
 		description: SITE_DESCRIPTION,
-		images: ['/images/og-image.webp'],
+		images: [`${SITE_URL}/images/og-image.webp`],
 	},
 	robots: {
 		index: true,
 		follow: true,
+		nocache: false,
 		googleBot: {
 			index: true,
 			follow: true,
+			noimageindex: false,
 			'max-video-preview': -1,
 			'max-image-preview': 'large',
 			'max-snippet': -1,
 		},
 	},
+	category: 'food',
 	other: {
 		'format-detection': 'telephone=no',
+		// Yandex geo targeting
+		'geo.region': 'KZ-KUS',
+		'geo.placename': 'Костанай',
+		'geo.position': '53.2144;63.6246',
+		'ICBM': '53.2144, 63.6246',
 	},
 };
 
@@ -116,8 +135,23 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="ru">
+		<html lang="ru" suppressHydrationWarning>
 			<head>
+				{/* Prevent theme flash - must be inline and blocking */}
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `
+							(function() {
+								try {
+									var theme = localStorage.getItem('Zefirka-theme');
+									if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+										document.documentElement.classList.add('dark');
+									}
+								} catch (e) {}
+							})();
+						`,
+					}}
+				/>
 				<PersonSchema />
 				<LocalBusinessSchema />
 				<WebsiteSchema />

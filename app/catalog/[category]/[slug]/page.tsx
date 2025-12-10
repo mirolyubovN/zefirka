@@ -43,7 +43,7 @@ export async function generateMetadata({
 			canonical: '/catalog/' + category + '/' + slug,
 		},
 		openGraph: {
-			title: dessert.title + ' | Профитроли',
+			title: dessert.title + ' | Zefirka',
 			description: plainDescription.slice(0, 160),
 			images: dessert.images[0] ? [dessert.images[0]] : undefined,
 		},

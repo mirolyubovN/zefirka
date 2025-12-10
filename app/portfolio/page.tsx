@@ -6,8 +6,8 @@ import { Breadcrumbs } from '@/components/breadcrumbs';
 import { BreadcrumbSchema, ImageGallerySchema } from '@/components/structured-data';
 
 export const metadata: Metadata = {
-	title: 'Портфолио — Профитроли',
-	description: 'Галерея работ: зефир, торты, птичье молоко и подарочные наборы ручной работы в Костанае',
+	title: 'Портфолио работ — Десерты ручной работы',
+	description: 'Фотогалерея работ кондитера: торты, зефир, пирожные, подарочные наборы. Более 50 примеров натуральных десертов в Костанае.',
 	alternates: {
 		canonical: '/portfolio',
 	},
