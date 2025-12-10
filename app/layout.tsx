@@ -5,6 +5,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { PersonSchema, LocalBusinessSchema, WebsiteSchema } from "@/components/structured-data";
+import { YandexMetrica } from "@/components/yandex-metrica";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
 
 const cormorant = Cormorant_Garamond({
@@ -144,7 +145,7 @@ export default function RootLayout({
 							(function() {
 								try {
 									var theme = localStorage.getItem('Zefirka-theme');
-									if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+									if (theme === 'dark' || (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
 										document.documentElement.classList.add('dark');
 									}
 								} catch (e) {}
@@ -157,11 +158,12 @@ export default function RootLayout({
 				<WebsiteSchema />
 			</head>
 			<body className={`${cormorant.variable} ${inter.variable} font-sans antialiased`}>
-				<ThemeProvider defaultTheme="light" storageKey="Zefirka-theme">
+				<ThemeProvider defaultTheme="system" storageKey="Zefirka-theme">
 					<Header />
 					<main className="min-h-screen">{children}</main>
 					<Footer />
 				</ThemeProvider>
+				<YandexMetrica />
 			</body>
 		</html>
 	);

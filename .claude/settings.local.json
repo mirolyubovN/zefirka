@@ -5,7 +5,11 @@
       "Bash(grep:*)",
       "Bash(where:*)",
       "Bash(npm run build:*)",
-      "Bash(del convert-to-webp.mjs delete-originals.mjs)"
+      "Bash(del convert-to-webp.mjs delete-originals.mjs)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "Bash(npm install:*)",
+      "Bash(Sort-Object)"
     ],
     "deny": [],
     "ask": []

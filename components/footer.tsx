@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { Instagram, MessageCircle, Send, ArrowUpRight } from 'lucide-react';
 import { CONTACT_LINKS, NAV_ITEMS, SITE_NAME } from '@/lib/constants';
+import { CurrentYear } from './current-year';
 
 export function Footer() {
-	const currentYear = new Date().getFullYear();
 
 	return (
 		<footer className="relative border-t border-border/50 bg-secondary/20 dark:bg-card/50">
@@ -123,10 +123,17 @@ export function Footer() {
 				{/* Bottom bar */}
 				<div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border/40 pt-8 sm:flex-row">
 					<p className="text-xs tracking-wide text-muted-foreground">
-						&copy; {currentYear} {SITE_NAME}. Все права защищены.
+						&copy; <CurrentYear /> {SITE_NAME}. Все права защищены.
 					</p>
-					<div className="flex items-center gap-4 text-xs tracking-wide text-muted-foreground/60">
+					<div className="flex flex-wrap items-center justify-center gap-4 text-xs tracking-wide text-muted-foreground/60">
 						<span>г. Костанай</span>
+						<span className="text-muted-foreground/30">•</span>
+						<Link
+							href="/privacy"
+							className="transition-colors hover:text-primary"
+						>
+							Политика конфиденциальности
+						</Link>
 						<span className="text-muted-foreground/30">•</span>
 						<a
 							href="https://mirolyubovn.netlify.app/ru"
@@ -134,7 +141,7 @@ export function Footer() {
 							rel="noopener noreferrer"
 							className="text-primary/70 transition-colors hover:text-primary"
 						>
-							Разработка веб-сайтов — НМ
+							Разработка сайтов — НМ
 						</a>
 					</div>
 				</div>

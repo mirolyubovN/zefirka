@@ -1,6 +1,5 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
 import { CONTACT_LINKS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import { MessageCircle, Send, ArrowUpRight } from 'lucide-react';

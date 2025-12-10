@@ -26,7 +26,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 export function ThemeProvider({
 	children,
 	defaultTheme = 'system',
-	storageKey = 'Zefirka-ui-theme',
+	storageKey = 'Zefirka-theme',
 	...props
 }: ThemeProviderProps) {
 	const [theme, setTheme] = useState<Theme>(defaultTheme);
@@ -44,18 +44,21 @@ export function ThemeProvider({
 		if (!mounted) return;
 
 		const root = window.document.documentElement;
-		root.classList.remove('light', 'dark');
 
+		let resolvedTheme = theme;
 		if (theme === 'system') {
-			const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
-				.matches
+			resolvedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
 				? 'dark'
 				: 'light';
-			root.classList.add(systemTheme);
-			return;
 		}
 
-		root.classList.add(theme);
+		// Only update if different from current state (prevents flash)
+		const isDark = root.classList.contains('dark');
+		if (resolvedTheme === 'dark' && !isDark) {
+			root.classList.add('dark');
+		} else if (resolvedTheme === 'light' && isDark) {
+			root.classList.remove('dark');
+		}
 	}, [theme, mounted]);
 
 	const value = {

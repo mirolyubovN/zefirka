@@ -198,7 +198,7 @@ export function ClickableImage({ src, alt, className, onClick }: ClickableImageP
 			<div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity hover:opacity-100">
 				<div className="rounded-full bg-white/90 p-3 shadow-lg">
 					<svg
-						className="h-5 w-5 text-foreground"
+						className="h-5 w-5 text-primary"
 						fill="none"
 						stroke="currentColor"
 						viewBox="0 0 24 24"
