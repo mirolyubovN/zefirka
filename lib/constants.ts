@@ -1,7 +1,7 @@
 // Contact links - keep in sync with content.md
 export const CONTACT_LINKS = {
 	whatsapp: 'https://wa.me/77772714910',
-	telegram: 'https://t.me/profiterolka_kst',
+	telegram: 'https://t.me/zefirka_kst',
 	instagram: 'https://instagram.com/oksana_desserts_kst',
 };
 
@@ -17,9 +17,9 @@ export const NAV_ITEMS = [
 ];
 
 // Site metadata
-export const SITE_NAME = 'Profiterole';
+export const SITE_NAME = 'Zefirka';
 export const SITE_DESCRIPTION = 'Премиальные натуральные десерты ручной работы: зефир, торты, птичье молоко, трюфели, профитроли и подарочные наборы в Костанае';
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://profiterole.kz';
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://zefirka.kz';
 
 // Why choose us items
 export const WHY_CHOOSE_US = [

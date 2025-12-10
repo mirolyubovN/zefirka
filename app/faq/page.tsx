@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/accordion';
 
 export const metadata: Metadata = {
-	title: 'Часто задаваемые вопросы — Profiterole',
+	title: 'Часто задаваемые вопросы — Zefirka',
 	description: 'Ответы на популярные вопросы о натуральных десертах, заказах и доставке в Костанае',
 	alternates: {
 		canonical: '/faq',

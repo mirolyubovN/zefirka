@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import { getCategories, getCategoryBySlug, getDessertsByCategory } from '@/content';
 import { DessertCard } from '@/components/dessert-card';
 import { SectionTitle } from '@/components/section-title';
@@ -9,6 +8,7 @@ import { BreadcrumbSchema, ProductSchema } from '@/components/structured-data';
 import { CTAButton } from '@/components/cta-button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { DessertGallery } from '@/components/dessert-gallery';
 import {
 	AnimatedFadeIn,
 	AnimatedStagger,
@@ -49,7 +49,7 @@ export async function generateMetadata({
 				canonical: '/catalog/' + category,
 			},
 			openGraph: {
-				title: dessert.title + ' | Profiterole',
+				title: dessert.title + ' | Zefirka',
 				description: plainDescription.slice(0, 160),
 				images: dessert.images[0] ? [dessert.images[0]] : [categoryData.coverImage],
 			},
@@ -64,7 +64,7 @@ export async function generateMetadata({
 			canonical: '/catalog/' + category,
 		},
 		openGraph: {
-			title: categoryData.title + ' | Profiterole',
+			title: categoryData.title + ' | Zefirka',
 			description: categoryData.description,
 			images: [categoryData.coverImage],
 		},
@@ -112,31 +112,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
 						<div className="grid gap-12 lg:grid-cols-2 mt-8">
 							<AnimatedFadeIn direction="left">
-								<div className="relative aspect-square overflow-hidden rounded-2xl shadow-xl">
-									<Image
-										src={mainImage}
-										alt={dessert.title}
-										fill
-										className="object-cover"
-										sizes="(max-width: 1024px) 100vw, 50vw"
-										priority
-									/>
-								</div>
-								{dessert.images.length > 1 && (
-									<div className="mt-4 grid grid-cols-4 gap-2">
-										{dessert.images.slice(1, 5).map((img, i) => (
-											<div key={i} className="relative aspect-square overflow-hidden rounded-lg">
-												<Image
-													src={img}
-													alt={dessert.title + ' ' + (i + 2)}
-													fill
-													className="object-cover"
-													sizes="100px"
-												/>
-											</div>
-										))}
-									</div>
-								)}
+								<DessertGallery images={dessert.images} alt={dessert.title} />
 							</AnimatedFadeIn>
 
 							<AnimatedFadeIn direction="right">

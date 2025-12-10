@@ -10,7 +10,7 @@ export function PersonSchema() {
     jobTitle: 'Домашний кондитер',
     description: 'Премиальные натуральные десерты ручной работы: зефир, торты, птичье молоко, профитролли, трюфели',
     url: SITE_URL,
-    image: `${SITE_URL}/images/about-photo.jpg`,
+    image: `${SITE_URL}/images/me.webp`,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Костанай',
@@ -47,7 +47,7 @@ export function LocalBusinessSchema() {
     description: 'Премиальные натуральные десерты ручной работы в Костанае',
     url: SITE_URL,
     telephone: '+77772714910',
-    image: `${SITE_URL}/images/portfolio/work-1.jpg`,
+    image: `${SITE_URL}/images/portfolio/work-1.webp`,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Костанай',

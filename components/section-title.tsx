@@ -23,12 +23,12 @@ export function SectionTitle({
 	};
 
 	const content = (
-		<div className={cn('mb-16 flex flex-col gap-4', alignClasses[align], className)}>
+		<div className={cn('mb-8 flex flex-col gap-3 lg:mb-16 lg:gap-4', alignClasses[align], className)}>
 			{/* Decorative element */}
 			<div className="flex items-center gap-3">
 				<span className="h-px w-8 bg-gradient-to-r from-transparent to-primary/60" />
 				<span className="text-[10px] font-medium uppercase tracking-[0.3em] text-primary">
-					Profiterole
+					Zefirka
 				</span>
 				<span className="h-px w-8 bg-gradient-to-l from-transparent to-primary/60" />
 			</div>

@@ -1,5 +1,5 @@
 ﻿import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Inter, Great_Vibes } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -19,14 +19,6 @@ const inter = Inter({
 	variable: "--font-inter",
 	subsets: ["latin", "cyrillic"],
 	weight: ["400", "500", "600", "700"],
-	display: "swap",
-	preload: true,
-});
-
-const greatVibes = Great_Vibes({
-	variable: "--font-logo",
-	subsets: ["latin"],
-	weight: ["400"],
 	display: "swap",
 	preload: true,
 });
@@ -89,10 +81,10 @@ export const metadata: Metadata = {
 		type: "website",
 		images: [
 			{
-				url: '/images/og-image.jpg',
+				url: '/images/og-image.webp',
 				width: 1200,
 				height: 630,
-				alt: 'Profiterole — Премиальные натуральные десерты в Костанае',
+				alt: 'Zefirka — Премиальные натуральные десерты в Костанае',
 			},
 		],
 	},
@@ -100,7 +92,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: SITE_NAME,
 		description: SITE_DESCRIPTION,
-		images: ['/images/og-image.jpg'],
+		images: ['/images/og-image.webp'],
 	},
 	robots: {
 		index: true,
@@ -130,8 +122,8 @@ export default function RootLayout({
 				<LocalBusinessSchema />
 				<WebsiteSchema />
 			</head>
-			<body className={`${cormorant.variable} ${inter.variable} ${greatVibes.variable} font-sans antialiased`}>
-				<ThemeProvider defaultTheme="light" storageKey="profiterole-theme">
+			<body className={`${cormorant.variable} ${inter.variable} font-sans antialiased`}>
+				<ThemeProvider defaultTheme="light" storageKey="Zefirka-theme">
 					<Header />
 					<main className="min-h-screen">{children}</main>
 					<Footer />

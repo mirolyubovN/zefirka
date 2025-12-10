@@ -32,10 +32,10 @@ export function Header() {
           href="/"
           className="group flex items-center flex-col transition-colors"
         >
-          <span style={{ fontFamily: "var(--font-logo)" }} className="text-2xl text-foreground transition-colors group-hover:text-primary lg:text-3xl">
+          <span style={{ fontFamily: "var(--font-display)" }} className="text-2xl font-semibold text-foreground transition-colors group-hover:text-primary lg:text-3xl">
             {SITE_NAME}
           </span>
-          <span style={{ fontFamily: "var(--font-logo)" }} className="text-base text-foreground transition-colors group-hover:text-primary lg:text-xl">
+          <span style={{ fontFamily: "var(--font-display)" }} className="text-sm font-medium tracking-wide text-foreground transition-colors group-hover:text-primary lg:text-base">
             Костанай
           </span>
         </Link>
@@ -87,7 +87,7 @@ export function Header() {
             >
               <SheetHeader className="border-b border-border/40 pb-6">
                 <div className="flex items-center justify-between">
-                  <SheetTitle style={{ fontFamily: "var(--font-logo)" }} className="text-3xl text-foreground">
+                  <SheetTitle style={{ fontFamily: "var(--font-display)" }} className="text-3xl font-semibold text-foreground">
                     {SITE_NAME}
                   </SheetTitle>
                   <SheetClose asChild>

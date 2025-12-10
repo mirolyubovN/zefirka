@@ -16,11 +16,11 @@ export function Footer() {
 					<div className="lg:col-span-5">
 						<Link
 							href="/"
-							style={{ fontFamily: "var(--font-logo)" }} className="inline-block text-4xl text-foreground transition-colors hover:text-primary"
+							style={{ fontFamily: "var(--font-display)" }} className="inline-block text-4xl font-semibold text-foreground transition-colors hover:text-primary"
 						>
 							<div className='flex flex-col items-center'>
 								<span>{SITE_NAME}</span>
-								<span className='text-base lg:text-xl'>Костанай</span>
+								<span className='text-sm font-medium tracking-wide lg:text-base'>Костанай</span>
 							</div>
 						</Link>
 						<p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">

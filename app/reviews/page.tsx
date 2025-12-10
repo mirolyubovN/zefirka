@@ -9,7 +9,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ReviewsGrid } from '@/components/reviews-grid';
 
 export const metadata: Metadata = {
-	title: 'Отзывы клиентов — Profiterole',
+	title: 'Отзывы клиентов — Zefirka',
 	description: 'Отзывы клиентов о натуральных десертах ручной работы в Костанае',
 	alternates: {
 		canonical: '/reviews',
