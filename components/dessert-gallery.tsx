@@ -42,7 +42,7 @@ export function DessertGallery({ images, alt }: DessertGalleryProps) {
         <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
           <div className="rounded-full bg-white/90 p-3 shadow-lg">
             <svg
-              className="h-6 w-6 text-foreground"
+              className="h-6 w-6 text-primary"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

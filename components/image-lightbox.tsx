@@ -21,9 +21,12 @@ export function ImageLightbox({ images, initialIndex = 0, isOpen, onClose }: Ima
 		setMounted(true);
 	}, []);
 
+	// Sync currentIndex when lightbox opens
 	useEffect(() => {
-		setCurrentIndex(initialIndex);
-	}, [initialIndex]);
+		if (isOpen) {
+			setCurrentIndex(initialIndex);
+		}
+	}, [isOpen, initialIndex]);
 
 	const goNext = useCallback(() => {
 		setCurrentIndex((prev) => (prev + 1) % images.length);

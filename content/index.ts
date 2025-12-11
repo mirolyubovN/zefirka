@@ -56,6 +56,13 @@ const categories: Category[] = [
 		description: "Недные трюфели из премиального бельгийского шоколада",
 		coverImage: "/images/categories/truffels.webp",
 	},
+	{
+		id: 7,
+		title: "Торты",
+		slug: "torty",
+		description: "Трендовые торты, которые не оставят вас равнодушными",
+		coverImage: "/images/categories/buklya.webp",
+	},
 ];
 
 const desserts: Dessert[] = [
@@ -97,7 +104,7 @@ const desserts: Dessert[] = [
 		description: "<p>Нежнейшее суфле — классика, которая никогда не выходит из моды.</p><p>Тает во рту, оставляя приятное послевкусие.</p>",
 		composition: "<ul><li>Сливочное масло 82,5%</li><li>Сгущённое молоко</li><li>Альбумин</li><li>Агар-агар</li><li>Вода</li><li>Добавочно (в зависимости от вкуса):</li><li>Шоколад, алкализованный какао</li><li>Апельсиновый сок и цедра апельсина</li><li>Сухой растворимый кофе</li><li>Фисташковая, арахисовая, кокосовая, фундучная, миндальная пасты без сахара</li></ul>",
 		features: [],
-		images: ["/images/desserts/ptichye-moloko-1.webp", "/images/portfolio/work-50.webp", "/images/portfolio/work-30.webp", "/images/portfolio/work-2.webp", "/images/portfolio/work-41.webp"],
+		images: ["/images/desserts/ptichye-moloko-1.webp", "/images/portfolio/work-50.webp", "/images/portfolio/work-30.webp", "/images/portfolio/work-2.webp", "/images/portfolio/work-67.webp"],
 	},
 	{
 		id: 5,
@@ -127,7 +134,7 @@ const desserts: Dessert[] = [
 		description: "<p>Нежный муссовый торт с изысканным вкусом. Идеально подходит для особых случаев и праздников.</p>",
 		composition: "<ul><li>Состав: сливки 33%, желатин, творожный сыр,  кондитерский шоколад (тёмный, молочный, белый), сахар.</li><li>Дополнительно (в зависимости от вкуса): кофе, халва, попкорн, воздушный рис, варёная сгущёнка, варёная карамель, кусочки шоколада. </li><li>Покрытие: шоколадная глазурь (шоколад и растительное масло, какао-масло), велюр на сгущёнке.</li></ul>",
 		features: [],
-		images: ["/images/portfolio/work-29.webp", "/images/desserts/mussovyy-tort-1.webp" , "/images/portfolio/work-28.webp"]
+		images: ["/images/portfolio/work-60.webp", "/images/portfolio/work-58.webp", "/images/portfolio/work-59.webp", "/images/portfolio/work-69.webp" , "/images/portfolio/work-28.webp"]
 	},
 	{
 		id: 8,
@@ -137,11 +144,48 @@ const desserts: Dessert[] = [
 		description: "<p>Изысканное муссовое пирожное с нежной текстурой и богатым вкусом.</p>",
 		composition: "<ul><li>Состав: сливки 33%, желатин, творожный сыр,  кондитерский шоколад (тёмный, молочный, белый), сахар.</li><li>Дополнительно (в зависимости от вкуса): кофе, сыр Маскарпоне, кусочки шоколада, ванильная, мятная пасты, кусочки печенья, карамель. </li><li>Покрытие: шоколадная глазурь (шоколад и растительное масло, какао-масло), велюр на сгущёнке.</li></ul>",
 		features: [],
-		images: ["/images/portfolio/work-19.webp", "/images/desserts/mussovoe-pirozhnoe-1.webp"],
+		images: ["/images/portfolio/work-55.webp", "/images/portfolio/work-19.webp", "/images/desserts/mussovoe-pirozhnoe-1.webp"],
+	},
+	{
+		id: 9,
+		title: "Торт",
+		slug: "tort",
+		categorySlug: "torty",
+		description: "<p>Трендовые торты ручной работы - настоящее украшение любого праздника. Каждый торт уникален: сочетание нежных бисквитов с роскошными неповторимыми начинками.</p><p>Идеально подходят для дней рождений, юбилеев и семейных торжеств..</p>",
+		composition: "<p>Использую только качественные ингредиенты: сливочное масло 82,5%, сливки 33%, сахар, сахарная пудра, глюкозный сироп, творожный сыр и маскарпоне лучших производителей, премиальный алкализованный какао, премиальный шоколад, сухой растворимый кофе, кокосовое молоко, фундучную и кокосовую пасты без сахара, ягодные и фруктовые пюре собственного приготовления, сезонные ягоды и фрукты, орехи. Покрытие: шоколадный ганаш, мастика. Не использую готовые украшения и шоколадную глазурь из магазина! Готова порадовать Вас своими изделиями! Напишите мне и мы всё обсудим.</p>",
+		features: [],
+		images: ["/images/portfolio/work-74.webp", "/images/portfolio/work-79.webp", "/images/portfolio/work-78.webp", "/images/portfolio/work-72.webp" ],
 	},
 ];
 
 const portfolio: PortfolioItem[] = [
+	// Best photos first - showcase pieces
+	{ id: 74, image: "/images/portfolio/work-74.webp" },
+	{ id: 72, image: "/images/portfolio/work-72.webp" },
+	{ id: 56, image: "/images/portfolio/work-56.webp" },
+	{ id: 70, image: "/images/portfolio/work-70.webp" },
+	{ id: 59, image: "/images/portfolio/work-59.webp" },
+	{ id: 55, image: "/images/portfolio/work-55.webp" },
+	{ id: 61, image: "/images/portfolio/work-61.webp" },
+	{ id: 69, image: "/images/portfolio/work-69.webp" },
+	{ id: 79, image: "/images/portfolio/work-79.webp" },
+	{ id: 76, image: "/images/portfolio/work-76.webp" },
+	{ id: 78, image: "/images/portfolio/work-78.webp" },
+	{ id: 62, image: "/images/portfolio/work-62.webp" },
+	{ id: 60, image: "/images/portfolio/work-60.webp" },
+	{ id: 57, image: "/images/portfolio/work-57.webp" },
+	{ id: 58, image: "/images/portfolio/work-58.webp" },
+	{ id: 66, image: "/images/portfolio/work-66.webp" },
+	{ id: 63, image: "/images/portfolio/work-63.webp" },
+	{ id: 73, image: "/images/portfolio/work-73.webp" },
+	{ id: 75, image: "/images/portfolio/work-75.webp" },
+	{ id: 77, image: "/images/portfolio/work-77.webp" },
+	{ id: 64, image: "/images/portfolio/work-64.webp" },
+	{ id: 65, image: "/images/portfolio/work-65.webp" },
+	{ id: 67, image: "/images/portfolio/work-67.webp" },
+	{ id: 68, image: "/images/portfolio/work-68.webp" },
+	{ id: 71, image: "/images/portfolio/work-71.webp" },
+	// Older portfolio items
 	{ id: 1, image: "/images/portfolio/work-1.webp" },
 	{ id: 2, image: "/images/portfolio/work-2.webp" },
 	{ id: 3, image: "/images/portfolio/work-3.webp" },
@@ -188,6 +232,10 @@ const portfolio: PortfolioItem[] = [
 	{ id: 48, image: "/images/portfolio/work-48.webp" },
 	{ id: 49, image: "/images/portfolio/work-49.webp" },
 	{ id: 50, image: "/images/portfolio/work-50.webp" },
+	{ id: 51, image: "/images/portfolio/work-51.webp" },
+	{ id: 52, image: "/images/portfolio/work-52.webp" },
+	{ id: 53, image: "/images/portfolio/work-53.webp" },
+	{ id: 54, image: "/images/portfolio/work-54.webp" },
 ];
 
 const reviews: Review[] = [

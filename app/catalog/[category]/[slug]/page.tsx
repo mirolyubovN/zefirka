@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import { getDessertBySlug, getCategoryBySlug, getDesserts } from '@/content';
 import { CTAButton } from '@/components/cta-button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,6 +7,7 @@ import { Separator } from '@/components/ui/separator';
 import { AnimatedFadeIn } from '@/components/animated-fade-in';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { BreadcrumbSchema, ProductSchema } from '@/components/structured-data';
+import { DessertGallery } from '@/components/dessert-gallery';
 
 interface DessertPageProps {
 	params: Promise<{
@@ -90,31 +90,7 @@ export default async function DessertPage({ params }: DessertPageProps) {
 
 					<div className="grid gap-12 lg:grid-cols-2">
 						<AnimatedFadeIn direction="left">
-							<div className="relative aspect-square overflow-hidden rounded-2xl shadow-xl">
-								<Image
-									src={mainImage}
-									alt={dessert.title}
-									fill
-									className="object-cover"
-									sizes="(max-width: 1024px) 100vw, 50vw"
-									priority
-								/>
-							</div>
-							{dessert.images.length > 1 && (
-								<div className="mt-4 grid grid-cols-4 gap-2">
-									{dessert.images.slice(1, 5).map((img, i) => (
-										<div key={i} className="relative aspect-square overflow-hidden rounded-lg">
-											<Image
-												src={img}
-												alt={dessert.title + ' ' + (i + 2)}
-												fill
-												className="object-cover"
-												sizes="100px"
-											/>
-										</div>
-									))}
-								</div>
-							)}
+							<DessertGallery images={dessert.images} alt={dessert.title} />
 						</AnimatedFadeIn>
 
 						<AnimatedFadeIn direction="right">

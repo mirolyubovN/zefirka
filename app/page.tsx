@@ -78,14 +78,6 @@ function HeroSection() {
 				<AnimatedFadeIn delay={0.3}>
 					<CTAButtonGroup className="mt-8 lg:mt-12" />
 				</AnimatedFadeIn>
-
-				{/* Scroll indicator - hidden on mobile to prevent overlap */}
-				<div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 opacity-50 sm:block">
-					<div className="flex flex-col items-center gap-2 text-muted-foreground">
-						<span className="text-[10px] uppercase tracking-[0.3em]">Листайте</span>
-						<div className="h-12 w-px bg-gradient-to-b from-muted-foreground/30 to-transparent" />
-					</div>
-				</div>
 			</div>
 		</section>
 	);

@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 export function CategoryCardSkeleton() {
 	return (
 		<Card className="overflow-hidden border-0 shadow-lg">
-			<CardContent className="relative aspect-[4/3] p-0">
+			<CardContent className="relative aspect-square p-0">
 				<Skeleton className="h-full w-full" />
 			</CardContent>
 		</Card>

@@ -110,74 +110,77 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 							]}
 						/>
 
-						<div className="grid gap-12 lg:grid-cols-2 mt-8">
-							<AnimatedFadeIn direction="left">
-								<DessertGallery images={dessert.images} alt={dessert.title} />
-							</AnimatedFadeIn>
+						<div className="grid gap-12 lg:grid-cols-5 mt-8">
+							<div className='lg:col-span-2'>
+								<AnimatedFadeIn direction="left">
+									<DessertGallery images={dessert.images} alt={dessert.title} />
+								</AnimatedFadeIn>
+							</div>
+							<div className='lg:col-span-3'>
+								<AnimatedFadeIn direction="right">
+									<div>
+										<h1 className="text-3xl font-bold text-foreground md:text-4xl">
+											{dessert.title}
+										</h1>
 
-							<AnimatedFadeIn direction="right">
-								<div>
-									<h1 className="text-3xl font-bold text-foreground md:text-4xl">
-										{dessert.title}
-									</h1>
-
-									{dessert.description && (
-										<div
-											className="mt-6 prose prose-neutral max-w-none text-muted-foreground [&>p]:mb-4"
-											dangerouslySetInnerHTML={{ __html: dessert.description }}
-										/>
-									)}
-
-									<Separator className="my-8" />
-
-									{dessert.composition && (
-										<div className="mb-8">
-											<h2 className="text-xl font-semibold text-foreground mb-4">
-												Состав
-											</h2>
+										{dessert.description && (
 											<div
-												className="prose prose-neutral max-w-none text-muted-foreground [&>ul]:list-disc [&>ul]:pl-5"
-												dangerouslySetInnerHTML={{ __html: dessert.composition }}
+												className="mt-6 prose prose-neutral max-w-none text-muted-foreground [&>p]:mb-4"
+												dangerouslySetInnerHTML={{ __html: dessert.description }}
 											/>
-										</div>
-									)}
+										)}
 
-									{dessert.features && dessert.features.length > 0 && (
-										<div className="mb-8">
-											<h2 className="text-xl font-semibold text-foreground mb-4">
-												Характеристики
-											</h2>
-											<div className="space-y-3">
-												{dessert.features.map((feature, i) => (
-													<div
-														key={i}
-														className="flex justify-between items-center py-2 border-b border-border"
-													>
-														<span className="text-muted-foreground">
-															{feature.name}
-														</span>
-														<span className="font-medium text-foreground">
-															{feature.value}
-														</span>
-													</div>
-												))}
+										<Separator className="my-8" />
+
+										{dessert.composition && (
+											<div className="mb-8">
+												<h2 className="text-xl font-semibold text-foreground mb-4">
+													Состав
+												</h2>
+												<div
+													className="prose prose-neutral max-w-none text-muted-foreground [&>ul]:list-disc [&>ul]:pl-5"
+													dangerouslySetInnerHTML={{ __html: dessert.composition }}
+												/>
 											</div>
-										</div>
-									)}
+										)}
 
-									<Card className="border-primary/20 bg-primary/5">
-										<CardContent className="p-6">
-											<h3 className="text-lg font-semibold text-foreground mb-2">
-												Хотите заказать?
-											</h3>
-											<p className="text-muted-foreground mb-4">
-												Напишите мне, чтобы обсудить детали заказа
-											</p>
-											<CTAButton variant="both" />
-										</CardContent>
-									</Card>
-								</div>
-							</AnimatedFadeIn>
+										{dessert.features && dessert.features.length > 0 && (
+											<div className="mb-8">
+												<h2 className="text-xl font-semibold text-foreground mb-4">
+													Характеристики
+												</h2>
+												<div className="space-y-3">
+													{dessert.features.map((feature, i) => (
+														<div
+															key={i}
+															className="flex justify-between items-center py-2 border-b border-border"
+														>
+															<span className="text-muted-foreground">
+																{feature.name}
+															</span>
+															<span className="font-medium text-foreground">
+																{feature.value}
+															</span>
+														</div>
+													))}
+												</div>
+											</div>
+										)}
+
+										<Card className="border-primary/20 bg-primary/5">
+											<CardContent className="p-6">
+												<h3 className="text-lg font-semibold text-foreground mb-2">
+													Хотите заказать?
+												</h3>
+												<p className="text-muted-foreground mb-4">
+													Напишите мне, чтобы обсудить детали заказа
+												</p>
+												<CTAButton variant="both" />
+											</CardContent>
+										</Card>
+									</div>
+								</AnimatedFadeIn>
+							</div>
 						</div>
 					</div>
 				</div>

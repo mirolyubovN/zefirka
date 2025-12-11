@@ -13,7 +13,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
     <Link href={`/catalog/${category.slug}`}>
       <div className="hover-lift">
         <Card className="group relative overflow-hidden border-0 bg-card py-0 shadow-sm transition-shadow duration-500 hover:shadow-xl hover:shadow-primary/10">
-          <CardContent className="relative aspect-[4/3] p-0">
+          <CardContent className="relative aspect-square p-0">
             <Image
               src={category.coverImage}
               alt={category.title}

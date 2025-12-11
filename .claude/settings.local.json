@@ -9,7 +9,11 @@
       "WebSearch",
       "WebFetch(domain:github.com)",
       "Bash(npm install:*)",
-      "Bash(Sort-Object)"
+      "Bash(Sort-Object)",
+      "Bash(findstr:*)",
+      "Bash(ls:*)",
+      "Bash(git diff:*)",
+      "mcp__ide__getDiagnostics"
     ],
     "deny": [],
     "ask": []

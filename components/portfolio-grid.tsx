@@ -1,12 +1,11 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
-import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import type { PortfolioItem } from '@/lib/content-types';
 import { cn } from '@/lib/utils';
 import { AnimatedStagger, AnimatedStaggerItem } from './animated-fade-in';
+import { ImageLightbox } from './image-lightbox';
 
 interface PortfolioGridProps {
 	items: PortfolioItem[];
@@ -14,33 +13,15 @@ interface PortfolioGridProps {
 }
 
 export function PortfolioGrid({ items, className }: PortfolioGridProps) {
-	const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+	const [lightboxOpen, setLightboxOpen] = useState(false);
+	const [lightboxIndex, setLightboxIndex] = useState(0);
 
-	const openLightbox = (index: number) => setSelectedIndex(index);
-	const closeLightbox = () => setSelectedIndex(null);
+	const openLightbox = (index: number) => {
+		setLightboxIndex(index);
+		setLightboxOpen(true);
+	};
 
-	const goToPrevious = useCallback(() => {
-		if (selectedIndex === null) return;
-		setSelectedIndex(selectedIndex === 0 ? items.length - 1 : selectedIndex - 1);
-	}, [selectedIndex, items.length]);
-
-	const goToNext = useCallback(() => {
-		if (selectedIndex === null) return;
-		setSelectedIndex(selectedIndex === items.length - 1 ? 0 : selectedIndex + 1);
-	}, [selectedIndex, items.length]);
-
-	useEffect(() => {
-		if (selectedIndex === null) return;
-
-		const handleKeyDown = (e: KeyboardEvent) => {
-			if (e.key === 'ArrowLeft') goToPrevious();
-			if (e.key === 'ArrowRight') goToNext();
-			if (e.key === 'Escape') closeLightbox();
-		};
-
-		window.addEventListener('keydown', handleKeyDown);
-		return () => window.removeEventListener('keydown', handleKeyDown);
-	}, [selectedIndex, goToPrevious, goToNext]);
+	const images = items.map(item => item.image);
 
 	return (
 		<>
@@ -92,73 +73,12 @@ export function PortfolioGrid({ items, className }: PortfolioGridProps) {
 				))}
 			</AnimatedStagger>
 
-			<Dialog open={selectedIndex !== null} onOpenChange={closeLightbox}>
-				<DialogContent
-					className="max-w-[100vw] max-h-[100vh] w-screen h-screen p-0 border-0 bg-black/95 rounded-none sm:max-w-[100vw]"
-					showCloseButton={false}
-				>
-					<DialogTitle className="sr-only">Просмотр изображения</DialogTitle>
-					{selectedIndex !== null && (
-						<div className="relative flex h-full w-full items-center justify-center animate-fade-in">
-							<div className="relative h-[85vh] w-[90vw] max-w-6xl">
-								<Image
-									src={items[selectedIndex].image}
-									alt={items[selectedIndex].title || 'Portfolio image'}
-									fill
-									className="object-contain"
-									sizes="90vw"
-									priority
-								/>
-							</div>
-
-							<button
-								onClick={closeLightbox}
-								className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-colors hover:bg-white/20"
-								aria-label="Close"
-							>
-								<X className="h-5 w-5" />
-							</button>
-
-							{items.length > 1 && (
-								<>
-									<button
-										onClick={(e) => {
-											e.stopPropagation();
-											goToPrevious();
-										}}
-										className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-colors hover:bg-white/20"
-										aria-label="Previous image"
-									>
-										<ChevronLeft className="h-6 w-6" />
-									</button>
-									<button
-										onClick={(e) => {
-											e.stopPropagation();
-											goToNext();
-										}}
-										className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-colors hover:bg-white/20"
-										aria-label="Next image"
-									>
-										<ChevronRight className="h-6 w-6" />
-									</button>
-								</>
-							)}
-
-							{items[selectedIndex].title && (
-								<div className="absolute bottom-20 left-1/2 -translate-x-1/2 text-center">
-									<h3 className="font-display text-lg font-medium text-white">
-										{items[selectedIndex].title}
-									</h3>
-								</div>
-							)}
-
-							<div className="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-2 text-sm text-white/80 backdrop-blur-sm">
-								{selectedIndex + 1} / {items.length}
-							</div>
-						</div>
-					)}
-				</DialogContent>
-			</Dialog>
+			<ImageLightbox
+				images={images}
+				initialIndex={lightboxIndex}
+				isOpen={lightboxOpen}
+				onClose={() => setLightboxOpen(false)}
+			/>
 		</>
 	);
 }
