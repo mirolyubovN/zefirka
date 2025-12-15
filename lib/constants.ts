@@ -9,6 +9,7 @@ export const CONTACT_LINKS = {
 export const NAV_ITEMS = [
 	{ href: '/', label: 'Главная' },
 	{ href: '/catalog', label: 'Каталог' },
+	{ href: '/podarochnye-nabory', label: 'Подарки' },
 	{ href: '/portfolio', label: 'Портфолио' },
 	{ href: '/about', label: 'Обо мне' },
 	{ href: '/reviews', label: 'Отзывы' },

@@ -25,7 +25,7 @@ const categories: Category[] = [
 		id: 2,
 		title: "Птичье молоко",
 		slug: "ptichye-moloko",
-		description: "Нежнейшее суфле в шоколадной глазури",
+		description: "Нежнейшее суфле, которое тает во рту",
 		coverImage: "/images/categories/ptichye-moloko.webp",
 	},
 	{
@@ -47,13 +47,13 @@ const categories: Category[] = [
 		title: "Профитроли",
 		slug: "profiteroli",
 		description: "Воздушные профитроли с очень вкусными начинками",
-		coverImage: "/images/categories/profiterole.webp",
+		coverImage: "/images/gifts/gift-16.webp",
 	},
 	{
 		id: 6,
 		title: "Трюфели",
 		slug: "truffels",
-		description: "Недные трюфели из премиального бельгийского шоколада",
+		description: "Нежные трюфели из премиального бельгийского шоколада",
 		coverImage: "/images/categories/truffels.webp",
 	},
 	{
@@ -62,6 +62,14 @@ const categories: Category[] = [
 		slug: "torty",
 		description: "Трендовые торты, которые не оставят вас равнодушными",
 		coverImage: "/images/categories/buklya.webp",
+	},
+	{
+		id: 8,
+		title: "Подарочные наборы",
+		slug: "podarochnye-nabory",
+		description: "Красивые наборы сладостей — идеи для подарков",
+		coverImage: "/images/portfolio/work-50.webp",
+		isLandingPage: true,
 	},
 ];
 

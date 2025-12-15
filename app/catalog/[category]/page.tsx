@@ -133,7 +133,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 										<Separator className="my-8" />
 
 										{dessert.composition && (
-											<div className="mb-8">
+											<div className="mb-8" data-nosnippet>
 												<h2 className="text-xl font-semibold text-foreground mb-4">
 													Состав
 												</h2>

@@ -58,18 +58,21 @@ function HeroSection() {
 				{/* Main headline */}
 				<AnimatedFadeIn delay={0.1}>
 					<h1 className="max-w-4xl font-display text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-						Натуральные десерты{' '}
+						Натуральные десерты
+						<br />
 						<span className="relative">
-							<span className="text-primary">ручной работы</span> в Костанае
-							<span className="absolute -bottom-2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+							<span className="text-primary">с премиум начинками</span>
 						</span>
+						<br />
+						в Костанае
+						<span className="absolute -bottom-2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 					</h1>
 				</AnimatedFadeIn>
 
 				{/* Subtitle */}
 				<AnimatedFadeIn delay={0.2}>
 					<p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground lg:mt-8 md:text-xl">
-						Изысканный зефир, муссовые торты, трюфели, профитроли и нежнейшее птичье молоко
+						Изысканный зефир, муссовые торты, трюфели, профитроли и нежнейшее птичье молоко ручной работы
 						из лучших натуральных ингредиентов
 					</p>
 				</AnimatedFadeIn>

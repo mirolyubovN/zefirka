@@ -6,6 +6,7 @@ export interface Category {
   slug: string;
   description: string;
   coverImage: string;
+  isLandingPage?: boolean;
 }
 
 export interface DessertFeature {
